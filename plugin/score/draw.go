@@ -19,7 +19,7 @@ import (
 	"github.com/FloatTech/zbputils/img/text"
 	"github.com/disintegration/imaging"
 
-	"github.com/FloatTech/ZeroBot-Plugin/kanban/banner"
+	"github.com/ctcticxh/ZeroBot-Plugin/kanban/banner"
 )
 
 type scoredrawer func(a *scdata) (image.Image, error)

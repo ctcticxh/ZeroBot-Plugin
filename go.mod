@@ -1,4 +1,4 @@
-module github.com/FloatTech/ZeroBot-Plugin
+module github.com/ctcticxh/ZeroBot-Plugin
 
 go 1.20
 
@@ -94,6 +94,7 @@ require (
 	modernc.org/memory v1.4.0 // indirect
 	modernc.org/sqlite v1.20.0 // indirect
 )
+//replace github.com/FloatTech/ZeroBot-Plugin => github.com/ctcticxh/ZeroBot-Plugin
 
 replace modernc.org/sqlite => github.com/fumiama/sqlite3 v1.20.0-with-win386
 
