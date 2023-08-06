@@ -1,6 +1,7 @@
 // Package aiwife 随机老婆
 package aiwife
 
+
 import (
 	"fmt"
 	"math/rand"
