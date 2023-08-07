@@ -86,6 +86,7 @@ import (
 	_ "github.com/ctcticxh/ZeroBot-Plugin/plugin/drawlots"         // 多功能抽签
 	_ "github.com/ctcticxh/ZeroBot-Plugin/plugin/dress"            // 女装
 	_ "github.com/ctcticxh/ZeroBot-Plugin/plugin/drift_bottle"     // 漂流瓶
+	_ "github.com/ctcticxh/ZeroBot-Plugin/plugin/earn"             //赚钱
 	_ "github.com/ctcticxh/ZeroBot-Plugin/plugin/emojimix"         // 合成emoji
 	_ "github.com/ctcticxh/ZeroBot-Plugin/plugin/event"            // 好友申请群聊邀请事件处理
 	_ "github.com/ctcticxh/ZeroBot-Plugin/plugin/font"             // 渲染任意文字到图片
