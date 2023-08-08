@@ -82,6 +82,15 @@ func init() {
 			walletinfo := wallet.GetWalletOf(uid)
 			if walletinfo < 1 {
 				ctx.SendChain(message.Text("你钱包没钱啦！"))
+				add := 10 + rand.Intn(10)
+				go func() {
+					err := wallet.InsertWalletOf(uid, add)
+					if err != nil {
+						ctx.SendChain(message.Text("ERROR: ", err))
+						return
+					}
+				}()
+				ctx.SendChain(message.Text("看你可怜，就给你 ", add, " 个atri币吧~"))
 				return
 			}
 			moneyToFavor := rand.Intn(math.Min(walletinfo, 100)) + 1
@@ -115,11 +124,20 @@ func init() {
 			if err != nil {
 				ctx.SendChain(message.At(uid), message.Text("[ERROR]:你的技能CD记录失败\n", err))
 			}
+			x := rand.Intn(2)
 			// 输出结果
 			if mood == 0 {
-				ctx.SendChain(message.Text("你花了", moneyToFavor, "ATRI币买了一件女装送给了ta,ta很不喜欢,你们的好感度降低至", lastfavor))
+				if x == 0 {
+					ctx.SendChain(message.Text("你花了", moneyToFavor, "ATRI币买了一件女装送给了ta,ta很不喜欢,你们的好感度降低至", lastfavor))
+				} else {
+					ctx.SendChain(message.Text("你花了", moneyToFavor, "ATRI币买了一盒小熊饼干送给了ta,ta很不喜欢,你们的好感度降低至", lastfavor))
+				}
 			} else {
-				ctx.SendChain(message.Text("你花了", moneyToFavor, "ATRI币买了一件女装送给了ta,ta很喜欢,你们的好感度升至", lastfavor))
+				if x == 0 {
+					ctx.SendChain(message.Text("你花了", moneyToFavor, "ATRI币买了一件女装送给了ta,ta很喜欢,你们的好感度升至", lastfavor))
+				} else {
+					ctx.SendChain(message.Text("你花了", moneyToFavor, "ATRI币买了一盒小熊饼干送给了ta,ta很喜欢,你们的好感度升至", lastfavor))
+				}
 			}
 		})
 	engine.OnFullMatch("好感度列表", zero.OnlyGroup, getdb).SetBlock(true).Limit(ctxext.LimitByUser).

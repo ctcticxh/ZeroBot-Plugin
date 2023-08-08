@@ -33,7 +33,7 @@ func init() {
 	engine.OnFullMatch("打工", zero.OnlyGroup).Limit(ctxext.LimitByGroup).SetBlock(true).
 		Handle(func(ctx *zero.Ctx) {
 			uid := ctx.Event.UserID
-			add := rand.Intn(11)
+			add := 10 + rand.Intn(11)
 			go func() {
 				err := wallet.InsertWalletOf(uid, add)
 				if err != nil {
