@@ -21,6 +21,14 @@ var (
 	})
 )
 
+// 技能CD记录表
+type cdsheet struct {
+	Time    int64  // 时间
+	GroupID int64  // 群号
+	UserID  int64  // 用户
+	ModeID  string // 技能类型
+}
+
 func init() {
 	engine.OnFullMatch("打工", zero.OnlyGroup).Limit(ctxext.LimitByGroup).SetBlock(true).
 		Handle(func(ctx *zero.Ctx) {
@@ -34,7 +42,7 @@ func init() {
 				}
 			}()
 			if add != 0 {
-				ctx.SendChain(message.Text("本次打工获得了：", add, "个atri币哦~"))
+				ctx.SendChain(message.Text("本次打工获得了：", add, " 个atri币哦~"))
 			} else {
 				ctx.SendChain(message.Text("本次打工一无所得哦~"))
 			}
@@ -51,9 +59,10 @@ func init() {
 				}
 			}()
 			if add != 0 {
-				ctx.SendChain(message.Text("本次乞讨获得了：", add, "个atri币哦~"))
+				ctx.SendChain(message.Text("本次乞讨获得了：", add, " 个atri币哦~"))
 			} else {
 				ctx.SendChain(message.Text("本次乞讨一无所得哦~"))
 			}
 		})
+
 }
