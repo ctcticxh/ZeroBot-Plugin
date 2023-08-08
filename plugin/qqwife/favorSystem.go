@@ -2,6 +2,7 @@ package qqwife
 
 import (
 	"errors"
+
 	"math/rand"
 	"sort"
 	"strconv"
@@ -47,12 +48,13 @@ func init() {
 			)
 		})
 	// 礼物系统
-	engine.OnRegex(`^买礼物给\s?(\[CQ:at,qq=(\d+)\]|(\d+))`, getdb).SetBlock(true).Limit(ctxext.LimitByUser).
+	engine.OnRegex(`^买(.*)给\s?(\[CQ:at,qq=(\d+)\]|(\d+))`, getdb).SetBlock(true).Limit(ctxext.LimitByUser).
 		Handle(func(ctx *zero.Ctx) {
 			gid := ctx.Event.GroupID
 			uid := ctx.Event.UserID
 			fiancee := ctx.State["regex_matched"].([]string)
-			gay, _ := strconv.ParseInt(fiancee[2]+fiancee[3], 10, 64)
+			gay, _ := strconv.ParseInt(fiancee[3]+fiancee[4], 10, 64)
+			gift_name := fiancee[1]
 			if gay == uid {
 				ctx.Send(message.ReplyWithMessage(ctx.Event.MessageID, message.At(uid), message.Text("你想给自己买什么礼物呢?")))
 				return
@@ -124,20 +126,11 @@ func init() {
 			if err != nil {
 				ctx.SendChain(message.At(uid), message.Text("[ERROR]:你的技能CD记录失败\n", err))
 			}
-			x := rand.Intn(2)
 			// 输出结果
 			if mood == 0 {
-				if x == 0 {
-					ctx.SendChain(message.Text("你花了", moneyToFavor, "ATRI币买了一件女装送给了ta,ta很不喜欢,你们的好感度降低至", lastfavor))
-				} else {
-					ctx.SendChain(message.Text("你花了", moneyToFavor, "ATRI币买了一盒小熊饼干送给了ta,ta很不喜欢,你们的好感度降低至", lastfavor))
-				}
+				ctx.SendChain(message.Text("你花了", moneyToFavor, "ATRI币买了", gift_name, "送给了ta,ta很不喜欢,你们的好感度降低至", lastfavor))
 			} else {
-				if x == 0 {
-					ctx.SendChain(message.Text("你花了", moneyToFavor, "ATRI币买了一件女装送给了ta,ta很喜欢,你们的好感度升至", lastfavor))
-				} else {
-					ctx.SendChain(message.Text("你花了", moneyToFavor, "ATRI币买了一盒小熊饼干送给了ta,ta很喜欢,你们的好感度升至", lastfavor))
-				}
+				ctx.SendChain(message.Text("你花了", moneyToFavor, "ATRI币买了", gift_name, "送给了ta,ta很喜欢,你们的好感度升至", lastfavor))
 			}
 		})
 	engine.OnFullMatch("好感度列表", zero.OnlyGroup, getdb).SetBlock(true).Limit(ctxext.LimitByUser).
