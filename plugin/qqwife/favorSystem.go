@@ -98,7 +98,7 @@ func init() {
 			moneyToFavor := rand.Intn(math.Min(walletinfo, 100)) + 1
 			// 计算钱对应的好感值
 			newFavor := 1
-			moodMax := 5
+			moodMax := 100
 			if favor > 50 {
 				newFavor = moneyToFavor % 10 // 礼物厌倦
 			} else {
@@ -107,7 +107,7 @@ func init() {
 			}
 			// 随机对方心情
 			mood := rand.Intn(moodMax)
-			if mood == 0 {
+			if mood <= favor {
 				newFavor = -newFavor
 			}
 			// 记录结果
@@ -127,7 +127,7 @@ func init() {
 				ctx.SendChain(message.At(uid), message.Text("[ERROR]:你的技能CD记录失败\n", err))
 			}
 			// 输出结果
-			if mood == 0 {
+			if mood <= favor {
 				ctx.SendChain(message.Text("你花了", moneyToFavor, "ATRI币买了", gift_name, "送给了ta,ta很不喜欢,你们的好感度降低至", lastfavor))
 			} else {
 				ctx.SendChain(message.Text("你花了", moneyToFavor, "ATRI币买了", gift_name, "送给了ta,ta很喜欢,你们的好感度升至", lastfavor))
