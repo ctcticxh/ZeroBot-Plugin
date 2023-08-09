@@ -40,7 +40,7 @@ var (
 )
 
 func init() {
-	engine.OnRegex(`^(?:chatgpt|//)([\s\S]*)$`, zero.OnlyToMe, getdb).SetBlock(false).
+	engine.OnRegex(`^(?:chatgpt|//)([\s\S]*)$`, getdb).SetBlock(false).
 		Handle(func(ctx *zero.Ctx) {
 			var messages []chatMessage
 			args := ctx.State["regex_matched"].([]string)[1]
