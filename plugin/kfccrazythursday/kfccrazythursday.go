@@ -11,7 +11,7 @@ import (
 )
 
 const (
-	crazyURL = "https://www.iculture.cc/demo/CrazyThursday/api/kfc.php"
+	crazyURL = "https://api.a20safe.com/api.php?api=7&key=471548b54e6625f0a4915a390a9bd5db"
 )
 
 func init() {
@@ -26,6 +26,8 @@ func init() {
 			ctx.SendChain(message.Text("ERROR: ", err))
 			return
 		}
-		ctx.SendChain(message.Text(gjson.ParseBytes(data).Get("@this.0.content").String()))
+		ctx.SendChain(message.Text(gjson.ParseBytes(data).Get("data.#.result").Array()[0]))
+		//fmt.Println(gjson.ParseBytes(data).Get("data"))
+		//fmt.Println(gjson.ParseBytes(data).Get("data.#.result").Array()[0])
 	})
 }
