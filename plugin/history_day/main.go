@@ -3,10 +3,12 @@ package history_day
 
 import (
 	"fmt"
+	"strconv"
 
 	"github.com/FloatTech/floatbox/web"
 	ctrl "github.com/FloatTech/zbpctrl"
 	"github.com/FloatTech/zbputils/control"
+	"github.com/tidwall/gjson"
 	zero "github.com/wdvxdr1123/ZeroBot"
 	"github.com/wdvxdr1123/ZeroBot/message"
 )
@@ -30,10 +32,18 @@ func init() {
 		//matched := ctx.State["matched"].(string)
 		//ctx.SendChain(message.Text("完全匹配的匹配词: ", matched))
 		format := "json"
-		data, err := web.GetData(fmt.Sprint(history_day_url, format))
+		data, err := web.GetData(fmt.Sprintf(history_day_url, format))
 		if err != nil {
 			ctx.SendChain(message.Text("Error:", err))
 		}
-		ctx.SendChain(message.Text(string(data)))
+		content_array := gjson.ParseBytes(data).Get("content").Array()
+		str := "历史上的今天：\n"
+		for i := 0; i < len(content_array); i++ {
+			str += strconv.Itoa(i+1) + ". " + content_array[i].String()
+			if i < len(content_array)-1 {
+				str += "\n"
+			}
+		}
+		ctx.SendChain(message.Text(str))
 	})
 }
