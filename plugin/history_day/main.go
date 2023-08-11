@@ -25,8 +25,8 @@ const (
 func init() {
 	engine := control.Register("history_day", &ctrl.Options[*zero.Ctx]{
 		DisableOnDefault: false,
-		Brief:            "历史上的今天（bug版）",
-		Help:             "历史上的今天（bug版）\n- 历史上的今天",
+		Brief:            "历史上的今天",
+		Help:             "历史上的今天\n- 历史上的今天",
 	})
 	engine.OnFullMatch("历史上的今天").Handle(func(ctx *zero.Ctx) {
 		//matched := ctx.State["matched"].(string)
