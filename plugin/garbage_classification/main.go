@@ -36,6 +36,11 @@ func init() {
 			ctx.SendChain(message.Text("ERROR: ", err))
 			return
 		}
-		ctx.SendChain(message.Text(args, "是", gjson.ParseBytes(data).Get("data.#.result").Array()[0]))
+		result := gjson.ParseBytes(data).Get("data.#.result").Array()[0].String()
+		if result == "未找到结果" {
+			ctx.SendChain(message.Text(result))
+			return
+		}
+		ctx.SendChain(message.Text(args, "是", result))
 	})
 }
