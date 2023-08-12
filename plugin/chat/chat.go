@@ -104,4 +104,16 @@ func init() { // 插件主体
 				))
 			}
 		})
+	engine.OnRegex(`^(.*)(呜)+(.*)$`).SetBlock(true).
+		Handle(func(ctx *zero.Ctx) {
+			ctx.SendChain(message.Text("哭什么，没用的东西，给你一拳！"))
+		})
+	engine.OnSuffix("家人们").SetBlock(true).
+		Handle(func(ctx *zero.Ctx) {
+			ctx.SendChain(message.Text("谁是你家人？"))
+		})
+	engine.OnPrefix("家人们").SetBlock(true).
+		Handle(func(ctx *zero.Ctx) {
+			ctx.SendChain(message.Text("谁是你家人？"))
+		})
 }
