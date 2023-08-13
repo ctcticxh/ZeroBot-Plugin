@@ -116,4 +116,13 @@ func init() { // 插件主体
 		Handle(func(ctx *zero.Ctx) {
 			ctx.SendChain(message.Text("谁是你家人？"))
 		})
+	engine.OnRegex(`^我是(.*)$`).SetBlock(true).
+		Handle(func(ctx *zero.Ctx) {
+			sta := ctx.State["regex_matched"].([]string)[1]
+			ctx.SendChain(message.Text("好的，你是", sta))
+		})
+	engine.OnPrefix("我觉得").SetBlock(true).Handle(func(ctx *zero.Ctx) {
+		thought := ctx.State["args"].(string)
+		ctx.SendChain(message.Text("好的，", thought))
+	})
 }
