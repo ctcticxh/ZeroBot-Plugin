@@ -143,6 +143,7 @@ import (
 	_ "github.com/ctcticxh/ZeroBot-Plugin/plugin/tracemoe"               // 搜番
 	_ "github.com/ctcticxh/ZeroBot-Plugin/plugin/translation"            // 翻译
 	_ "github.com/ctcticxh/ZeroBot-Plugin/plugin/vitsnyaru"              // vits猫雷
+	_ "github.com/ctcticxh/ZeroBot-Plugin/plugin/vote"                   //投票选择
 	_ "github.com/ctcticxh/ZeroBot-Plugin/plugin/vtb_quotation"          // vtb语录
 	_ "github.com/ctcticxh/ZeroBot-Plugin/plugin/vtbmusic"               // vtb点歌
 	_ "github.com/ctcticxh/ZeroBot-Plugin/plugin/wallet"                 // 钱包
