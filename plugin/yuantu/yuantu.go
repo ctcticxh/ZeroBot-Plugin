@@ -12,6 +12,7 @@ import (
 
 	ctrl "github.com/FloatTech/zbpctrl"
 	"github.com/FloatTech/zbputils/control"
+	"github.com/gocolly/colly/v2"
 	zero "github.com/wdvxdr1123/ZeroBot"
 	"github.com/wdvxdr1123/ZeroBot/message"
 )
@@ -37,10 +38,22 @@ func init() { // 插件主体
 		})
 	engine.OnFullMatch("更新图库").SetBlock(true).
 		Handle(func(ctx *zero.Ctx) {
-			start := 1
-			end := 10
-			working(start, end)
+			//SpidePage()
+			go main()
 		})
+}
+
+func main() {
+	c := colly.NewCollector()
+	c.OnHTML("a[href]", func(h *colly.HTMLElement) {
+		link := h.Attr("href")
+		fmt.Printf("Link found: %q -> %s\n", h.Text, link)
+		c.Visit(h.Request.AbsoluteURL(link))
+	})
+	c.OnRequest(func(r *colly.Request) {
+		fmt.Println("Visiting", r.URL.String())
+	})
+	c.Visit("https://wall.alphacoders.com/by_sub_category.php?id=297132&name=Honkai+Impact+3rd+Wallpapers")
 }
 
 // 获取一个网页所有的内容
@@ -51,6 +64,8 @@ func HttpGet(url string) (result string, err error) {
 		return
 	}
 	defer resp.Body.Close()
+	body, err := io.ReadAll(resp.Body)
+	os.WriteFile("test.txt", body, 0664)
 	buf := make([]byte, 4096)
 	for {
 		n, err2 := resp.Body.Read(buf)
@@ -72,7 +87,8 @@ func HttpGet(url string) (result string, err error) {
 func SaveJokeFile(url string) {
 	captcha := strconv.Itoa(int(hash(url)))
 	//保存在本地的地址
-	path := "file/" + captcha + ".jpg"
+	path := "E:/imgs/" + captcha + ".jpg"
+	fmt.Println(path)
 	f, err := os.Create(path)
 	if err != nil {
 		fmt.Println("HttpGet err:", err)
@@ -103,54 +119,41 @@ func SaveJokeFile(url string) {
 	}
 
 }
-
-func working(start, end int) {
-	fmt.Printf("正在爬取 %d 到 %d \n", start, end)
-
-	page := make(chan int) //设置多线程
-
-	for i := start; i <= end; i++ {
-		go SpidePage(i, page)
-	}
-	for i := start; i <= end; i++ {
-		fmt.Printf("第 %d 页爬取完毕\n", <-page)
-	}
-}
-
-func SpidePage(i int, page chan int) {
-	//网站每一页的改变
-	url := "https://wall.alphacoders.com/by_sub_category.php?id=297132&name=Honkai+Impact+3rd+Wallpapers&page=" + strconv.Itoa(i*1)
+func SpidePage() {
+	fmt.Println("爬爬爬1")
+	url := "https://wall.alphacoders.com/by_sub_category.php?id=297132&name=Honkai+Impact+3rd+Wallpapers"
 	//读取这个页面的所有信息
 	result, err := HttpGet(url)
 	//判断是否出错，并打印信息
 	if err != nil {
 		fmt.Println("SpidePage err:", err)
 	}
+	fmt.Println("result :", len(result))
 
 	//正则表达式提取信息
-	str := `<div class="thumb-container-big " id="thumb_(?s:(.*?))">`
+	str := `<div class="thumb-container-big " id="thumb_(?s:(.*?))" itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">`
+	fmt.Println("爬爬爬2")
 	//解析、编译正则
 	ret := regexp.MustCompile(str)
 	//提取需要信息-每一个图片的数字
 	urls := ret.FindAllStringSubmatch(result, -1)
-
+	fmt.Println("爬爬爬3")
+	fmt.Println(len(urls))
 	for _, jokeURL := range urls {
 		//组合每个图片的url
 		joke := `https://wall.alphacoders.com/big.php?i=` + jokeURL[1]
-
+		fmt.Println(joke)
 		//爬取图片的url
 		tuUrl, err := SpideJokePage(joke)
+		fmt.Println("在爬了")
 		if err != nil {
 			fmt.Println("tuUrl err:", err)
 			continue
 		}
-
+		fmt.Println(tuUrl)
 		SaveJokeFile(tuUrl)
 
 	}
-
-	//防止主go程提前结束
-	page <- i
 }
 
 // 爬取图片放大的页面
@@ -162,7 +165,7 @@ func SpideJokePage(url string) (tuUrl string, err error) {
 		fmt.Println("SpidePage err:", err)
 	}
 
-	str := `<img class="main-content" src="(?s:(.*?))"`
+	str := `<meta itemprop="image" content="(.*)">`
 	//解析、编译正则
 	ret := regexp.MustCompile(str)
 	//提取需要信息-每一个段子的url

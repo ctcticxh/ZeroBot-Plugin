@@ -104,7 +104,7 @@ func init() { // 插件主体
 				))
 			}
 		})
-	engine.OnRegex(`^(.*)(呜)+(.*)$`).SetBlock(true).
+	engine.OnRegex(`^(.*)(呜呜)+(.*)$`).SetBlock(true).
 		Handle(func(ctx *zero.Ctx) {
 			ctx.SendChain(message.Text("哭什么，没用的东西，给你一拳！"))
 		})
@@ -123,6 +123,10 @@ func init() { // 插件主体
 		})
 	engine.OnPrefix("我觉得").SetBlock(true).Handle(func(ctx *zero.Ctx) {
 		thought := ctx.State["args"].(string)
-		ctx.SendChain(message.Text("好的，", thought))
+		ctx.SendChain(message.Text("是的，", thought))
+	})
+	engine.OnPrefix("复读").SetBlock(true).Handle(func(ctx *zero.Ctx) {
+		content := ctx.State["args"].(string)
+		ctx.SendChain(message.Text(content))
 	})
 }
