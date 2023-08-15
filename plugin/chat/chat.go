@@ -14,6 +14,12 @@ import (
 )
 
 var (
+	pokes = [...][2]string{
+		{"请不要戳", " >_<"},
+		{"喂(#`O′) 戳", "干嘛！"},
+		{"再戳", "就要生气啦！"},
+		{"再戳", "，就要诅咒你啦(╯‵□′)╯︵┻━┻"},
+		{"一直戳", "你一定是变态对吧？！对吧？！"}}
 	poke   = rate.NewManager[int64](time.Minute*5, 8) // 戳一戳
 	engine = control.Register("chat", &ctrl.Options[*zero.Ctx]{
 		DisableOnDefault: false,
@@ -40,8 +46,9 @@ func init() { // 插件主体
 	// 戳一戳
 	engine.On("notice/notify/poke", zero.OnlyToMe).SetBlock(false).
 		Handle(func(ctx *zero.Ctx) {
-			var nickname = zero.BotConfig.NickName[0]
-			switch {
+			nickname_order := rand.Intn(len(zero.BotConfig.NickName))
+			var nickname = zero.BotConfig.NickName[nickname_order]
+			/*switch {
 			case poke.Load(ctx.Event.GroupID).AcquireN(3):
 				// 5分钟共8块命令牌 一次消耗3块命令牌
 				time.Sleep(time.Second * 1)
@@ -52,7 +59,10 @@ func init() { // 插件主体
 				ctx.SendChain(message.Text("喂(#`O′) 戳", nickname, "干嘛！"))
 			default:
 				// 频繁触发，不回复
-			}
+			}*/
+			poke_order := rand.Intn(len(pokes))
+			var t_poke = pokes[poke_order]
+			ctx.SendChain(message.Text(t_poke[0], nickname, t_poke[1]))
 		})
 	// 群空调
 	var AirConditTemp = map[int64]int{}
