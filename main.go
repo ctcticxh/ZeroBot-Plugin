@@ -111,6 +111,7 @@ import (
 	_ "github.com/ctcticxh/ZeroBot-Plugin/plugin/juejuezi"               // 绝绝子生成器
 	_ "github.com/ctcticxh/ZeroBot-Plugin/plugin/kfccrazythursday"       // 疯狂星期四
 	_ "github.com/ctcticxh/ZeroBot-Plugin/plugin/klala"                  //星穹铁道图鉴
+	_ "github.com/ctcticxh/ZeroBot-Plugin/plugin/kokomi"                 //原神面板查询
 	_ "github.com/ctcticxh/ZeroBot-Plugin/plugin/lolicon"                // lolicon 随机图片
 	_ "github.com/ctcticxh/ZeroBot-Plugin/plugin/magicprompt"            // magicprompt吟唱提示
 	_ "github.com/ctcticxh/ZeroBot-Plugin/plugin/midicreate"             // 简易midi音乐制作
