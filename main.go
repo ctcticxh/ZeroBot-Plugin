@@ -78,6 +78,7 @@ import (
 	_ "github.com/ctcticxh/ZeroBot-Plugin/plugin/choose"                 // 选择困难症帮手
 	_ "github.com/ctcticxh/ZeroBot-Plugin/plugin/chouxianghua"           // 说抽象话
 	_ "github.com/ctcticxh/ZeroBot-Plugin/plugin/chrev"                  // 英文字符翻转
+	_ "github.com/ctcticxh/ZeroBot-Plugin/plugin/coc"                    //coc跑团辅助器
 	_ "github.com/ctcticxh/ZeroBot-Plugin/plugin/coser"                  // 三次元小姐姐
 	_ "github.com/ctcticxh/ZeroBot-Plugin/plugin/cpstory"                // cp短打
 	_ "github.com/ctcticxh/ZeroBot-Plugin/plugin/dailynews"              // 今日早报
