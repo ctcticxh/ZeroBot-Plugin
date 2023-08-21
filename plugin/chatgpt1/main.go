@@ -16,16 +16,11 @@ const (
 	modelGPT3Dot5Turbo = "gpt-3.5-turbo"
 	MyKey              = "471548b54e6625f0a4915a390a9bd5db"
 	URL                = "https://api.a20safe.com/api.php?api=36&key=%s&text=%s&gptkey=%s"
-	gptkey             = "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"
+	gptkey             = "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"
 )
 
-type sessionKey struct {
-	group int64
-	user  int64
-}
-
 var (
-	engine = control.Register("chatgpt", &ctrl.Options[*zero.Ctx]{
+	engine = control.Register("chatgpt1", &ctrl.Options[*zero.Ctx]{
 		DisableOnDefault: false,
 		Brief:            "chatgpt1",
 		Help: "-@bot chatgpt [对话内容]\n" +
@@ -38,13 +33,12 @@ var (
 			"- (私聊发送)删除apikey\n" +
 			"- (群聊发送)(授权|取消)(本群|全局)使用apikey\n" +
 			"注:先私聊设置自己的key,再授权群聊使用,不会泄露key的\n",
-		PrivateDataFolder: "chatgpt",
 	})
 	pre = ""
 )
 
 func init() {
-	engine.OnRegex(`^(?:///)([\s\S]*)$`).SetBlock(false).
+	engine.OnRegex(`^#([\s\S]*)$`).SetBlock(false).
 		Handle(func(ctx *zero.Ctx) {
 			args := ctx.State["regex_matched"].([]string)[1]
 			question := pre + args
@@ -55,11 +49,11 @@ func init() {
 			reply := gjson.ParseBytes(data).Get("data.#.reply").Array()[0]
 			ctx.SendChain(message.Text(reply))
 		})
-	engine.OnRegex(`^设置\s*OpenAI\s*apikey\s*(.*)$`, zero.OnlyPrivate).SetBlock(true).Handle(func(ctx *zero.Ctx) {
+	/*engine.OnRegex(`^设置\s*OpenAI\s*apikey\s*(.*)$`, zero.OnlyPrivate).SetBlock(true).Handle(func(ctx *zero.Ctx) {
 		ctx.SendChain(message.Text("保存apikey成功"))
 	})
 	engine.OnFullMatch("删除apikey").SetBlock(true).
 		Handle(func(ctx *zero.Ctx) {
 			ctx.SendChain(message.Text("保存apikey成功"))
-		})
+		})*/
 }
