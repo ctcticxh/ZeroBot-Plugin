@@ -16,7 +16,7 @@ const (
 	modelGPT3Dot5Turbo = "gpt-3.5-turbo"
 	MyKey              = "471548b54e6625f0a4915a390a9bd5db"
 	URL                = "https://api.a20safe.com/api.php?api=36&key=%s&text=%s&gptkey=%s"
-	gptkey             = "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"
+	gptkey             = "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"
 )
 
 var (
