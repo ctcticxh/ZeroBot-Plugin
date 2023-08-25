@@ -22,7 +22,7 @@ var (
 	})
 
 	base    = engine.DataFolder()
-	baseurl = "file:///" + file.BOTPATH + "/" + base
+	baseurl = file.BOTPATH + "/" + base
 )
 
 func init() { // 插件主体
