@@ -1,0 +1,538 @@
+[
+  {
+    "position": 1,
+    "info": "别太赶了。"
+  },
+  {
+    "position": 2,
+    "info": "别想了。"
+  },
+  {
+    "position": 3,
+    "info": "不。"
+  },
+  {
+    "position": 4,
+    "info": "不然呢？"
+  },
+  {
+    "position": 5,
+    "info": "不要抱期望。"
+  },
+  {
+    "position": 6,
+    "info": "要求不要太高。"
+  },
+  {
+    "position": 7,
+    "info": "这是必然的，不要抗拒。"
+  },
+  {
+    "position": 8,
+    "info": "不要浪费精力。"
+  },
+  {
+    "position": 9,
+    "info": "不要浪费你的时间了。"
+  },
+  {
+    "position": 10,
+    "info": "不要做得过火了。"
+  },
+  {
+    "position": 11,
+    "info": "不用担心。"
+  },
+  {
+    "position": 12,
+    "info": "车到山前必有路。"
+  },
+  {
+    "position": 13,
+    "info": "答案就在你身边。"
+  },
+  {
+    "position": 14,
+    "info": "大胆一点。"
+  },
+  {
+    "position": 15,
+    "info": "大方一点。"
+  },
+  {
+    "position": 16,
+    "info": "等等。"
+  },
+  {
+    "position": 17,
+    "info": "放轻松点，慢慢来。"
+  },
+  {
+    "position": 18,
+    "info": "管它呢。"
+  },
+  {
+    "position": 19,
+    "info": "毫无疑问。"
+  },
+  {
+    "position": 20,
+    "info": "好运将会降临。"
+  },
+  {
+    "position": 21,
+    "info": "忽略了一件显而易见的事。"
+  },
+  {
+    "position": 22,
+    "info": "换个角度想想。"
+  },
+  {
+    "position": 23,
+    "info": "会付出代价。"
+  },
+  {
+    "position": 24,
+    "info": "会感到庆幸。"
+  },
+  {
+    "position": 25,
+    "info": "会很不顺利。"
+  },
+  {
+    "position": 26,
+    "info": "会很顺利。"
+  },
+  {
+    "position": 27,
+    "info": "会后悔的。"
+  },
+  {
+    "position": 28,
+    "info": "会失去自我。"
+  },
+  {
+    "position": 29,
+    "info": "会特别顺利。"
+  },
+  {
+    "position": 30,
+    "info": "继续前进。"
+  },
+  {
+    "position": 31,
+    "info": "结果可能让人惊讶。"
+  },
+  {
+    "position": 32,
+    "info": "绝对的。"
+  },
+  {
+    "position": 33,
+    "info": "肯定的。"
+  },
+  {
+    "position": 34,
+    "info": "没错。"
+  },
+  {
+    "position": 35,
+    "info": "木已成舟。"
+  },
+  {
+    "position": 36,
+    "info": "你必须解决一些相关的问题。"
+  },
+  {
+    "position": 37,
+    "info": "不会后悔的。"
+  },
+  {
+    "position": 38,
+    "info": "不会失望的。"
+  },
+  {
+    "position": 39,
+    "info": "得真正地努力一下。"
+  },
+  {
+    "position": 40,
+    "info": "还有别的选择。"
+  },
+  {
+    "position": 41,
+    "info": "你说了算。"
+  },
+  {
+    "position": 42,
+    "info": "你心里已经有答案了。"
+  },
+  {
+    "position": 43,
+    "info": "需要合作。"
+  },
+  {
+    "position": 44,
+    "info": "需要冒险。"
+  },
+  {
+    "position": 45,
+    "info": "要主动。"
+  },
+  {
+    "position": 46,
+    "info": "你在开玩笑吗？"
+  },
+  {
+    "position": 47,
+    "info": "你做什么都没用。"
+  },
+  {
+    "position": 48,
+    "info": "奇迹即将降临。"
+  },
+  {
+    "position": 49,
+    "info": "千万不能失败。"
+  },
+  {
+    "position": 50,
+    "info": "全力以赴。"
+  },
+  {
+    "position": 51,
+    "info": "认清现实吧。"
+  },
+  {
+    "position": 52,
+    "info": "三思而后行。"
+  },
+  {
+    "position": 53,
+    "info": "尚待时日。"
+  },
+  {
+    "position": 54,
+    "info": "省点力气吧。"
+  },
+  {
+    "position": 55,
+    "info": "时机未到。"
+  },
+  {
+    "position": 56,
+    "info": "听听别人怎么说。"
+  },
+  {
+    "position": 57,
+    "info": "听听专家怎么说。"
+  },
+  {
+    "position": 58,
+    "info": "万一错过，就没这个机会了。"
+  },
+  {
+    "position": 59,
+    "info": "为什么不呢？"
+  },
+  {
+    "position": 60,
+    "info": "问问你的亲人。"
+  },
+  {
+    "position": 61,
+    "info": "问问自己，为什么要这么干。"
+  },
+  {
+    "position": 62,
+    "info": "先做点别的。"
+  },
+  {
+    "position": 63,
+    "info": "现在说不清。"
+  },
+  {
+    "position": 64,
+    "info": "现在你可以。"
+  },
+  {
+    "position": 65,
+    "info": "相信你的直觉。"
+  },
+  {
+    "position": 66,
+    "info": "相信你的最初想法。"
+  },
+  {
+    "position": 67,
+    "info": "想得美。"
+  },
+  {
+    "position": 68,
+    "info": "想想有没有机会。"
+  },
+  {
+    "position": 69,
+    "info": "休息一下就好了。"
+  },
+  {
+    "position": 70,
+    "info": "学会妥协。"
+  },
+  {
+    "position": 71,
+    "info": "眼光长远一点。"
+  },
+  {
+    "position": 72,
+    "info": "要有点耐心。"
+  },
+  {
+    "position": 73,
+    "info": "要知足。"
+  },
+  {
+    "position": 74,
+    "info": "要抓住问题的关键。"
+  },
+  {
+    "position": 75,
+    "info": "一定会有好结果的。"
+  },
+  {
+    "position": 76,
+    "info": "一笑了之。"
+  },
+  {
+    "position": 77,
+    "info": "以后再说。"
+  },
+  {
+    "position": 78,
+    "info": "用尽一切办法去努力。"
+  },
+  {
+    "position": 79,
+    "info": "有。"
+  },
+  {
+    "position": 80,
+    "info": "有可能。"
+  },
+  {
+    "position": 81,
+    "info": "仔细想想再说。"
+  },
+  {
+    "position": 82,
+    "info": "再等等看。"
+  },
+  {
+    "position": 83,
+    "info": "障碍重重。"
+  },
+  {
+    "position": 84,
+    "info": "这辈子都不可能。"
+  },
+  {
+    "position": 85,
+    "info": "这不可取。"
+  },
+  {
+    "position": 86,
+    "info": "这不切实际。"
+  },
+  {
+    "position": 87,
+    "info": "这不值得努力。"
+  },
+  {
+    "position": 88,
+    "info": "这会影响你的形象。"
+  },
+  {
+    "position": 89,
+    "info": "这件事会很麻烦。"
+  },
+  {
+    "position": 90,
+    "info": "这件事你说了不算。"
+  },
+  {
+    "position": 91,
+    "info": "这没什么意义。"
+  },
+  {
+    "position": 92,
+    "info": "这取决于你的行动。"
+  },
+  {
+    "position": 93,
+    "info": "这是肯定的。"
+  },
+  {
+    "position": 94,
+    "info": "没法保证。"
+  },
+  {
+    "position": 95,
+    "info": "无法预测。"
+  },
+  {
+    "position": 96,
+    "info": "这是在浪费金钱。"
+  },
+  {
+    "position": 97,
+    "info": "没什么好结果。"
+  },
+  {
+    "position": 98,
+    "info": "值得奋斗。"
+  },
+  {
+    "position": 99,
+    "info": "这种事情不要告诉别人。"
+  },
+  {
+    "position": 100,
+    "info": "只有一次机会。"
+  },
+  {
+    "position": 101,
+    "info": "众所周知。"
+  },
+  {
+    "position": 102,
+    "info": "重新想想。"
+  },
+  {
+    "position": 103,
+    "info": "注意细节。"
+  },
+  {
+    "position": 104,
+    "info": "做最坏的打算。"
+  },
+  {
+    "position": 105,
+    "info": "不要纠结了。"
+  },
+  {
+    "position": 106,
+    "info": "毫无道理。"
+  },
+  {
+    "position": 107,
+    "info": "结果会让你惊喜。"
+  },
+  {
+    "position": 108,
+    "info": "这不是你想要的。"
+  },
+  {
+    "position": 109,
+    "info": "寻找机会就行。"
+  },
+  {
+    "position": 110,
+    "info": "不要自作多情。"
+  },
+  {
+    "position": 111,
+    "info": "最后一次机会。"
+  },
+  {
+    "position": 112,
+    "info": "顺其自然。"
+  },
+  {
+    "position": 113,
+    "info": "学会释然。"
+  },
+  {
+    "position": 114,
+    "info": "别瞎折腾了。"
+  },
+  {
+    "position": 115,
+    "info": "再过几年。"
+  },
+  {
+    "position": 116,
+    "info": "不要忽视自己的力量。"
+  },
+  {
+    "position": 117,
+    "info": "尽在掌握之中。"
+  },
+  {
+    "position": 118,
+    "info": "地点不合适。"
+  },
+  {
+    "position": 119,
+    "info": "不作死就不会死。"
+  },
+  {
+    "position": 120,
+    "info": "当局者迷。"
+  },
+  {
+    "position": 121,
+    "info": "另择吉日。"
+  },
+  {
+    "position": 122,
+    "info": "时间会证明一切。"
+  },
+  {
+    "position": 123,
+    "info": "并非永恒。"
+  },
+  {
+    "position": 124,
+    "info": "倾听你内心的声音。"
+  },
+  {
+    "position": 125,
+    "info": "如你所愿。"
+  },
+  {
+    "position": 126,
+    "info": "遇上方知有。"
+  },
+  {
+    "position": 127,
+    "info": "不值得。"
+  },
+  {
+    "position": 128,
+    "info": "见好就收。"
+  },
+  {
+    "position": 129,
+    "info": "你猜。"
+  },
+  {
+    "position": 130,
+    "info": "时机尚不成熟。"
+  },
+  {
+    "position": 131,
+    "info": "这难以置信。"
+  },
+  {
+    "position": 132,
+    "info": "与你无关。"
+  },
+  {
+    "position": 133,
+    "info": "放手。"
+  },
+  {
+    "position": 134,
+    "info": "拭目以待。"
+  }
+]
