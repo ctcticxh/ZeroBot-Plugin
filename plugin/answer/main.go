@@ -30,7 +30,7 @@ func init() { // 插件主体
 		Handle(func(ctx *zero.Ctx) {
 			data, err := os.ReadFile(baseurl + "answer.json")
 
-			ctx.SendChain(message.Text(baseurl))
+			//ctx.SendChain(message.Text(baseurl))
 
 			if err != nil {
 				ctx.SendChain(message.Text("Error:", err))
