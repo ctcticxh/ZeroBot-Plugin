@@ -65,6 +65,7 @@ import (
 	_ "github.com/ctcticxh/ZeroBot-Plugin/plugin/aipaint"                // ai绘图
 	_ "github.com/ctcticxh/ZeroBot-Plugin/plugin/aiwife"                 // 随机老婆
 	_ "github.com/ctcticxh/ZeroBot-Plugin/plugin/alipayvoice"            // 支付宝到账语音
+	_ "github.com/ctcticxh/ZeroBot-Plugin/plugin/answer"                 //答案之书
 	_ "github.com/ctcticxh/ZeroBot-Plugin/plugin/autowithdraw"           // 触发者撤回时也自动撤回
 	_ "github.com/ctcticxh/ZeroBot-Plugin/plugin/b14"                    // base16384加解密
 	_ "github.com/ctcticxh/ZeroBot-Plugin/plugin/baidu"                  // 百度一下

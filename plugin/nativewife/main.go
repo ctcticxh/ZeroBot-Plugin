@@ -54,6 +54,10 @@ func init() {
 				n := r.Intn(len(wifes))
 				wn := wifes[n].Name()
 				ctx.SendChain(message.Text(name, "的wife是", wn, "\n"), message.Image(baseuri+grpf+"/"+wn), message.Text("\n哦~"))
+				fmt.Println(baseuri)
+				fmt.Println(grpf)
+				fmt.Println(wn)
+				fmt.Println(baseuri + grpf + "/" + wn)
 			}
 		})
 	// 上传一张图
