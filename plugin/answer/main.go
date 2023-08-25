@@ -2,7 +2,6 @@
 package answer
 
 import (
-	"fmt"
 	"math/rand"
 	"os"
 
@@ -41,6 +40,6 @@ func init() { // 插件主体
 
 			ctx.SendChain(message.At(ctx.Event.UserID), message.Text(gjson.ParseBytes(data).Get("#.info").Array()[i]))
 
-			fmt.Println(baseurl)
+			ctx.SendChain(message.Text(baseurl))
 		})
 }
