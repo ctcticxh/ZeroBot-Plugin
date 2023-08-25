@@ -30,6 +30,8 @@ func init() { // 插件主体
 		Handle(func(ctx *zero.Ctx) {
 			data, err := os.ReadFile(baseurl + "answer.json")
 
+			ctx.SendChain(message.Text(baseurl))
+
 			if err != nil {
 				ctx.SendChain(message.Text("Error:", err))
 			}
@@ -40,6 +42,5 @@ func init() { // 插件主体
 
 			ctx.SendChain(message.At(ctx.Event.UserID), message.Text(gjson.ParseBytes(data).Get("#.info").Array()[i]))
 
-			ctx.SendChain(message.Text(baseurl))
 		})
 }
