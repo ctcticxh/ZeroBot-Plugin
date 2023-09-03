@@ -139,4 +139,5 @@ func init() { // 插件主体
 		content := ctx.State["args"].(string)
 		ctx.SendChain(message.Text(content))
 	})
+
 }
