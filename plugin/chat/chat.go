@@ -63,6 +63,8 @@ func init() { // 插件主体
 			poke_order := rand.Intn(len(pokes))
 			var t_poke = pokes[poke_order]
 			ctx.SendChain(message.Text(t_poke[0], nickname, t_poke[1]))
+			ctx.SendChain(message.Poke(ctx.Event.UserID))
+
 		})
 	// 群空调
 	var AirConditTemp = map[int64]int{}
