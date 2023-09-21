@@ -2,7 +2,9 @@
 package chat
 
 import (
+	"fmt"
 	"math/rand"
+	"net/http"
 	"strconv"
 	"time"
 
@@ -140,6 +142,30 @@ func init() { // 插件主体
 	engine.OnPrefix("复读").SetBlock(true).Handle(func(ctx *zero.Ctx) {
 		content := ctx.State["args"].(string)
 		ctx.SendChain(message.Text(content))
+	})
+
+	engine.OnFullMatch("图图图").SetBlock(true).Handle(func(ctx *zero.Ctx) {
+		index := rand.Intn(10000)
+		true_index := index + 1300000
+		url := "https://images7.alphacoders.com/131/" + strconv.Itoa(true_index) + ".jpeg"
+		rsp, err := http.Get(url)
+		if err != nil {
+			ctx.SendChain(message.Text("ERROR", err))
+		}
+		defer rsp.Body.Close()
+		for rsp.StatusCode == http.StatusNotFound {
+			fmt.Println("查找中")
+			index := rand.Intn(10000)
+			true_index := index + 1300000
+			url := "https://images7.alphacoders.com/131/" + strconv.Itoa(true_index) + ".jpeg"
+			rsp, err = http.Get(url)
+			if err != nil {
+				ctx.SendChain(message.Text("ERROR", err))
+			}
+			defer rsp.Body.Close()
+		}
+		ctx.SendChain(message.Image(url))
+		fmt.Println(url)
 	})
 
 }

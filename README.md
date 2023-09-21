@@ -5,7 +5,7 @@
   <h1>ZeroBot-Plugin</h1>
 
   “椛椛是[真寻](https://github.com/HibiKier/zhenxun_bot)的好朋友！”
-  
+
   ZeroBot-Plugin 是 ZeroBot 的 实用插件合集<br><br>
 
 
@@ -91,7 +91,7 @@ zerobot [-h] [-m] [-n nickname] [-t token] [-u url] [-g url] [-p prefix] [-d|w] 
 
   - [x] /响应 (在发送的群/用户开始工作)
 
-  - [x] /沉默 (在发送的群/用户停止工作)
+  - [ ] /沉默 (在发送的群/用户停止工作)
 
   - [x] /全局响应 (在所有位置开始工作，无视单独的沉默)
 
@@ -380,7 +380,7 @@ print("run[CQ:image,file="+j["img"]+"]")
   - [x] 设置ai绘图撤回时间90s
   
   - [x] 查看ai绘图配置
-  
+
   例: 设置ai绘图配置 http://91.216.169.75:5010 abc
 
   参考服务器 http://91.217.139.190:5010, http://91.216.169.75:5010, http://185.80.202.180:5010
@@ -787,14 +787,17 @@ print("run[CQ:image,file="+j["img"]+"]")
   - [x] [创建/删除]歌单 [歌单名称]
   - [x] 下载歌曲[歌曲名称/网易云歌曲ID]到[歌单名称]
 	
+
   -------管 理 员 指 令--------
   - [x] 设置猜歌默认歌单 [歌单名称]
   - [x] 上传歌曲[群文件的音乐名]到[歌单名称]
 	
+
   ------公 用 指 令------
   - [x] 歌单列表
   - [x] [个人/团队]猜歌
 	
+
   ------插 件 扩 展------
 	
   - 本插件内置了[NeteaseCloudMusicApi](https://binaryify.github.io/NeteaseCloudMusicApi/#/)框架的一些功能
@@ -1404,7 +1407,7 @@ print("run[CQ:image,file="+j["img"]+"]")
   - [x] 警报
   
   - [x] 每日特惠
-  </details>
+    </details>
 <details>
   <summary>天气/拼音查询-名言</summary>
 
@@ -1427,15 +1430,15 @@ print("run[CQ:image,file="+j["img"]+"]")
   基于百度文心API的一些功能
 
   key申请链接：https://wenxin.baidu.com/moduleApi/key
-  
+
   - [x] 为[自己/本群/QQ号/群+群号]设置文心key [API Key] [Secret Key]
   
   - [x] 为[自己/本群/QQ号/群+群号]设置画图key [API Key] [Secret Key]
-  
+
   例：“为10086设置画图key 123 456”；“为群10010设置画图key 789 101”
-  
+
   文心key和画图key的API key 可以是相同的，只是文心key日限为200，画图日限为50，以此作区别。
-  
+
   - [x] 文心作文 (x字的)[作文题目]
   
   - [x] 文心提案 (x字的)[文案标题]
@@ -1497,9 +1500,9 @@ print("run[CQ:image,file="+j["img"]+"]")
   <summary>一些游戏王插件</summary>
 
   `import _ "github.com/FloatTech/ZeroBot-Plugin/plugin/ygo"`
-  
+
   ##### 白鸽API卡查
-	    
+
   ###### `"github.com/FloatTech/ZeroBot-Plugin/plugin/ygo/ygocdb.go"`
   - [x] /ydp [xxx]
   - [x] /yds [xxx]
@@ -1515,6 +1518,7 @@ print("run[CQ:image,file="+j["img"]+"]")
   - [x] 查卡店  [卡名] -r [稀有度]
   - 注：卡店只支持单个稀有度查询
 	
+
 </details>
 <details>
   <summary>月幕galgame图</summary>
