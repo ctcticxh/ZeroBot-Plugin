@@ -84,6 +84,7 @@ func init() {
 					}
 				}
 				err := file.DownloadTo(url, grpfolder+"/"+name)
+				fmt.Println(grpfolder + "/" + name)
 				if err == nil {
 					process.SleepAbout1sTo2s()
 					ctx.SendChain(message.Reply(ctx.Event.MessageID), message.Text("成功！"))
